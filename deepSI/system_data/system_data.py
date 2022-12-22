@@ -309,8 +309,10 @@ class System_data(object):
         k0_right = max(nf, na_right, nb_right)
         for k in range(k0+k0_right,len(u)+1,stride):
             kmid = k - k0_right
-            yhist.append(y[kmid-na:kmid+na_right])
-            uhist.append(u[kmid-nb:kmid+nb_right])
+            #yhist.append(y[kmid-na:kmid+na_right])   
+            #uhist.append(u[kmid-nb:kmid+nb_right])
+            yhist.append(y[kmid+1-na:kmid+1+na_right])
+            uhist.append(u[kmid+1-nb:kmid+1+nb_right])
             yfuture.append(y[kmid:kmid+nf])
             ufuture.append(u[kmid:kmid+nf])
             # yhist.append(y[k-na-nf:k-nf])
