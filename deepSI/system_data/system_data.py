@@ -850,9 +850,6 @@ class System_data_norm(object):
         if self.is_id:
             return System_data(u=sys_data.u,x=sys_data.x,y=sys_data.y, \
                                cheat_n=sys_data.cheat_n,normed=True,dt=sys_data.dt)
-        else:
-            return System_data(u=sys_data.u,x=sys_data.x,y=sys_data.y, \
-                               cheat_n=sys_data.cheat_n,normed=True,dt=sys_data.dt)
 
         if isinstance(sys_data,System_data):
             assert sys_data.normed==False, 'System_data is already normalized'
@@ -884,9 +881,6 @@ class System_data_norm(object):
             return System_data_list([self.inverse_transform(s) for s in sys_data.sdl])
         
         if self.is_id:
-            return System_data(u=sys_data.u,x=sys_data.x,y=sys_data.y, \
-                               cheat_n=sys_data.cheat_n,normed=False,dt=sys_data.dt)
-        else:
             return System_data(u=sys_data.u,x=sys_data.x,y=sys_data.y, \
                                cheat_n=sys_data.cheat_n,normed=False,dt=sys_data.dt)
 
